@@ -1,0 +1,80 @@
+<html>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+        <option value="weight">Weight</option>
+        <option value="-storage">Storage</option>
+        <option value="-talktime">Talk Time</option>
+        <option value="-standbytime">Standby Time</option>
+
+      </select>
+    <br><br>
+    Saved:
+    <li ng-repeat="p in favorites track by $index">
+      <a href="#/phones/{{p.id}}"  target="_blank">{{p.name}}</a>
+    </li>
+
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      
+        <p> Phone A: {{phoneA.name}} </p>
+
+        <p> Phone B: {{phoneB.name}} </p>
+
+        <a href="#/phones/compare/{{phoneA.id}}/{{phoneB.id}}"> Compare! </a>
+
+      </br></br>
+
+
+      </ul>
+
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"
+            class="thumbnail phone-listing">
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.id}}">{{phone.name}} </a>           
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+          Weight: {{phone.weight | na}}g
+          &nbsp;&nbsp;
+          Storage: {{phone.storage | na}}mb
+          &nbsp;&nbsp;
+          Talk Time: {{phone.talktime | na}}h
+          &nbsp;&nbsp;
+          Standby Time: {{phone.standbytime | na}}h
+
+
+
+          <p>{{phone.snippet}}</p>
+
+          <button ng-click="addToCompare(phone, 'A')"> Select A </button>
+          <button ng-click="addToCompare(phone, 'B')"> Select B</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button ng-click="addToFavorites(phone)"> &hearts;  </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button ng-click="buy(phone)"> Buy Now! </button>
+
+
+
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+</html>

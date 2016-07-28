@@ -1,0 +1,255 @@
+<style type="text/CSS">
+
+table {
+    table-layout: fixed;
+    width:100%;
+}
+
+</style>
+
+<h1>Phone A: {{phoneA.name}}</h1>
+
+<h1>Phone B: {{phoneB.name}}</h1>
+
+<tr>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h3>Availability and Networks</h3>
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>Carriers</td>
+    <td><dd ng-repeat="availability in phoneA.availability">{{availability | na}}</dd></td>    
+    <td><dd ng-repeat="availability in phoneB.availability">{{availability | na}}</dd></td>
+  </tr>
+</table>
+
+<h3>Battery</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>{{phoneA.battery.type | na}}</td>    
+    <td>{{phoneB.battery.type | na}}</td>    
+  </tr>
+  <tr>
+    <td>Talk Time</td>
+    <td>{{phoneA.battery.talkTime | na}}</td>    
+    <td>{{phoneB.battery.talkTime | na}}</td>    
+  </tr>
+  <tr>
+    <td>Max Standby Time</td>
+    <td>{{phoneA.battery.standbyTime | na}}</td>    
+    <td>{{phoneB.battery.standbyTime | na}}</td>    
+  </tr>
+</table>
+
+<h3>Storage and Memory</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>RAM</td>
+    <td>{{phoneA.storage.ram | na}}</td>    
+    <td>{{phoneB.storage.ram | na}}</td>    
+  </tr>
+  <tr>
+    <td>Internal Storage</td>
+    <td>{{phoneA.storage.flash | na}}</td>    
+    <td>{{phoneB.storage.flash | na}}</td>    
+  </tr>
+</table>
+
+<h3>Connectivity</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>Network Support</td>
+    <td>{{phoneA.connectivity.cell | na}}</td>    
+    <td>{{phoneB.connectivity.cell | na}}</td>    
+  </tr>
+  <tr>
+    <td>WiFi</td>
+    <td>{{phoneA.connectivity.wifi | na}}</td>    
+    <td>{{phoneB.connectivity.wifi | na}}</td>    
+  </tr>
+  <tr>
+    <td>Bluetooth</td>
+    <td>{{phoneA.connectivity.bluetooth | na}}</td>    
+    <td>{{phoneB.connectivity.bluetooth | na}}</td>    
+  </tr>
+  <tr>
+    <td>Infared</td>
+    <td>{{phoneA.connectivity.infared | checkmark}}</td>    
+    <td>{{phoneB.connectivity.infared | checkmark}}</td>    
+  </tr>
+   <tr>
+    <td>GPS</td>
+    <td>{{phoneA.connectivity.gps | checkmark}}</td>    
+    <td>{{phoneB.connectivity.gps | checkmark}}</td>    
+  </tr>
+</table>
+
+<h3>Android</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>OS Version</td>
+    <td>{{phoneA.android.os | na}}</td>    
+    <td>{{phoneB.android.os | na}}</td>    
+  </tr>
+  <tr>
+    <td>UI</td>
+    <td>{{phoneA.android.ui | na}}</td>    
+    <td>{{phoneB.android.ui | na}}</td>    
+  </tr>
+</table>
+
+<h3>Size and Weight</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>Dimensions</td>
+    <td><dd ng-repeat="dim in phoneA.sizeAndWeight.dimensions">{{dim | na}}</dd></td>    
+    <td><dd ng-repeat="dim in phoneB.sizeAndWeight.dimensions">{{dim | na}}</dd></td>    
+  </tr>
+  <tr>
+    <td>Weight</td>
+    <td>{{phoneA.sizeAndWeight.weight | na}}</td>    
+    <td>{{phoneB.sizeAndWeight.weight | na}}</td>    
+  </tr>
+</table>
+
+<h3>Display</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>Screen Size</td>
+    <td>{{phoneA.display.screenSize | na}}</td>    
+    <td>{{phoneB.display.screenSize | na}}</td>    
+  </tr>
+  <tr>
+    <td>Resolution</td>
+    <td>{{phoneA.display.screenResolution | na}}</td>    
+    <td>{{phoneB.display.screenResolution | na}}</td>    
+  </tr>
+   <tr>
+    <td>Touch Screen</td>
+    <td>{{phoneA.display.touchScreen | checkmark}}</td>    
+    <td>{{phoneB.display.touchScreen | checkmark}}</td>    
+  </tr>
+</table>
+
+<h3>Hardware</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>CPU</td>
+    <td>{{phoneA.hardware.cpu | na}}</td>    
+    <td>{{phoneB.hardware.cpu | na}}</td>    
+  </tr>
+  <tr>
+    <td>USB</td>
+    <td>{{phoneA.hardware.usb | na}}</td>    
+    <td>{{phoneB.hardware.usb | na}}</td>    
+  </tr>
+  <tr>
+    <td>Audio</td>
+    <td>{{phoneA.hardware.audioJack | na}}</td>    
+    <td>{{phoneB.hardware.audioJack | na}}</td>    
+  </tr>
+  <tr>
+    <td>FM Radio</td>
+    <td>{{phoneA.hardware.fmRadio | checkmark}}</td>    
+    <td>{{phoneB.hardware.fmRadio | checkmark}}</td>    
+  </tr>
+  <tr>
+    <td>Accelerometer</td>
+    <td>{{phoneA.hardware.accelerometer | checkmark}}</td>    
+    <td>{{phoneB.hardware.accelerometer | checkmark}}</td>    
+  </tr>
+</table>
+
+<h3>Camera</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>Primary</td>
+    <td>{{phoneA.camera.primary | na}}</td>    
+    <td>{{phoneB.camera.primary | na}}</td>    
+  </tr>
+  <tr>
+    <td>Features</td>
+    <td>{{phoneA.camera.features.join(', ') | na}}</td>    
+    <td>{{phoneB.camera.features.join(', ') | na}}</td>   
+  </tr>
+</table>
+
+<h3>Additional Features</h3>
+<table style = "width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>{{phoneA.name | na}}</th>
+    <th>{{phoneB.name | na}}</th>   
+  </tr>
+  <tr>
+    <td>Additional Features</td>
+    <td>{{phoneA.additionalFeatures | na}}</td>    
+    <td>{{phoneB.additionalFeatures | na}}</td>   
+  </tr>
+</table>
+</body>
+</html>
+
+
